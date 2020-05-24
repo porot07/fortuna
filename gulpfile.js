@@ -1,9 +1,7 @@
-let gulp = require('gulp');
-let sass = require('gulp-sass');
-let browserSync = require('browser-sync');
-let uglify = require('gulp-uglify');
-let concat = require('gulp-concat');
-let rename = require('gulp-rename');
+let gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync'),
+    rename = require('gulp-rename');
 
 gulp.task('scss', () => {
   return gulp.src('./app/scss/**/*.scss')
@@ -33,7 +31,6 @@ gulp.task('js', () => {
     .pipe(gulp.dest('./app/js'))
     .pipe(browserSync.reload({ stream: true }))
 });
-
 
 gulp.task('browser-sync', () => {
   return browserSync.init({
